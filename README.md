@@ -19,6 +19,7 @@ A simple, clean community website for Hunters Ridge homeowners. It gives the nei
 - Neighborhood merchandise store (Printify-powered)
 - Fully responsive — works on mobile and desktop
 - Fast-loading static site with compressed images
+- Has recommended vendors/contractors for our neighborhood
 
 ## How it works
 
