@@ -42,7 +42,7 @@ function showSlide(index, restart = false) {
     slide.setAttribute('aria-hidden', String(!active && slideIndex !== previousSlide && slideIndex !== nextSlide));
   });
   dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === currentSlide));
-  carouselCount.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+  if (carouselCount) carouselCount.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
   carouselProgress.classList.remove('running');
   void carouselProgress.offsetWidth;
   carouselProgress.classList.add('running');
@@ -77,8 +77,18 @@ startCarousel();
 
 const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('.site-header nav');
+const navBackdrop = document.querySelector('.nav-backdrop');
+
+function closeMenu() {
+  nav.classList.remove('open');
+  navBackdrop.classList.remove('open');
+  menuButton.setAttribute('aria-expanded', 'false');
+}
+
 menuButton.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
+  navBackdrop.classList.toggle('open', open);
   menuButton.setAttribute('aria-expanded', String(open));
 });
-nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
+navBackdrop.addEventListener('click', closeMenu);
+nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
