@@ -2,9 +2,10 @@
 
 The official community website for Hunters Ridge Drive — a private neighborhood of 18 homes in Pennington, New Jersey.
 
-![Hunters Ridge community website](Hunters%20Ridge%20Dr..png)
+<img width="1699" height="833" alt="image" src="https://github.com/user-attachments/assets/fb4ef764-1d31-46d6-8f06-4fe129053098" />
 
-**[View the site →](https://huntersridge.community)**
+
+**[View the site →](hrd.homes)**
 
 ## What it is
 
@@ -25,17 +26,7 @@ A minimal Node/Express server (`server.js`) serves the static files in `public/`
 
 The home photos are compressed JPEG (converted from PNG at 78% quality, max 1400px wide) to keep page load fast on mobile.
 
-## Run it locally
-
-Requires Node.js 18+.
-
-```bash
-npm install
-node server.js
-```
-
-Then open [http://localhost:3000](http://localhost:3000).
 
 ## Credits
 
-Built for the Hunters Ridge Drive community, Pennington, NJ. Merchandise store powered by [Printify](https://printify.com).
+No AI used
